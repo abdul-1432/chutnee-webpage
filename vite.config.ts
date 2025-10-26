@@ -2,10 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
-// https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  base: "/chutnee-webpage/", // 👈 Add this line for GitHub Pages
-
+export default defineConfig({
   server: {
     host: "::",
     port: 8080,
@@ -16,4 +13,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-}));
+  // No 'base' needed for Netlify
+});
